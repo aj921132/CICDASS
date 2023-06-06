@@ -5,7 +5,7 @@ pipeline {
         stage('Compile and Clean') { 
             steps {
                 // Run Maven on a Unix agent.
-                sh 'pwd'
+                sh 'cd Assisgnment2'
                 sh "mvn clean compile"
             }
         }
