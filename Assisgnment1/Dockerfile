@@ -1,5 +1,5 @@
-FROM node
+FROM node:latest
 WORKDIR /app
 COPY . .
-RUN ["node", "app.js"]
 EXPOSE 3000
+ENTRYPOINT [ "node", "app.js" ]
