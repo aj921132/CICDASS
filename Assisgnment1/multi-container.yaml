@@ -1,0 +1,12 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: yellow
+spec:
+  containers:
+    - name: lemon
+      image: busybox
+      command: ["sh", "-c", "while true; do echo Hello-Coder; sleep 1000 ; done"]
+    - name : gold
+      image: redis
+      command: ["sh", "-c" , "while true; do echo Hello-Programmer; sleep 5 ; done"]
