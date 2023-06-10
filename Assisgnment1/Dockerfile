@@ -1,5 +1,5 @@
 FROM node:latest
 WORKDIR /app
 COPY . .
-EXPOSE 3000
+EXPOSE 8080
 ENTRYPOINT [ "node", "app.js" ]

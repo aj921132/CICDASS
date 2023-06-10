@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web-deployment
+  labels: 
+    app: simple-webapp-deploy
+spec:
+  selector:
+    matchLabels:
+      app: simple-webapp
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: simple-webapp
+    spec:
+      containers:
+      - name: web-app
+        image: artijain/kub2assis1:latest
+        ports:
+        - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: webapp-service
+  labels:
+    app: web
+spec:
+  type: NodePort
+  selector:
+    app: simple-webapp 
+  ports:
+    - port: 8080
+      targetPort: 8080
+      nodePort: 30080
